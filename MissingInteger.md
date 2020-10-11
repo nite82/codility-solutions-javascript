@@ -49,6 +49,6 @@ function solution(A) {
         if ((A[i] - A[i-1]) > 1) return A[i-1] + 1
     }
     
-    return A[A.lenth -1] + 1
+    return A[A.length -1] + 1
 }
 ```
