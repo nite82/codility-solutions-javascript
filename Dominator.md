@@ -78,3 +78,34 @@ function solution(A) {
     return pos;
 }
 ```
+//// Another Possible solution
+function solution(A) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    let countObj={};
+    let maxNumber
+    let maxCount=0;
+    let count=0;
+    if(A.length==0)
+    return -1;
+    for(let i=0;i<A.length;i++)
+    {
+       countObj[A[i]] = typeof countObj[A[i]]!='undefined'?countObj[A[i]]+1:1; 
+    }
+    //console.log(countObj);
+    for(i in countObj)
+    {
+        if(countObj[i]>maxCount)
+        {
+            maxCount=countObj[i];
+            maxNumber=i;
+        }
+    }
+    if (maxCount <= A.length / 2) {
+        return -1;
+    }
+    for (var i in A) {
+        if (A[i] == maxNumber) {
+            return parseInt(i);
+        }
+    }
+}
